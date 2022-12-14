@@ -1,0 +1,60 @@
+<html>
+  <head>
+    <title>Canvas Practice</title>
+  </head>
+
+  <body>
+  <script type="application/javascript" src="practice.js">
+  </script>
+
+    <canvas height="510" width="510" id="myCanvas"></canvas>
+    <script>
+    var canvas = document.getElementById('myCanvas');
+    var catax = canvas.getContext('2d');
+    catax.fillStyle = "#ADD8E6";
+    // x off, y off, x fill, y fill
+    catax.fillRect(10,10,500,500);
+
+    // start smile
+    catax.beginPath();
+    catax.strokeStyle = "red";
+    catax.lineWidth = 2;
+
+    catax.arc(255,255,100,0,Math.PI); // outer-bottom circle
+
+    catax.moveTo(350,255)
+    catax.arc(255,250,95,0.1,Math.PI-.05); // inner-bottom circle
+
+    catax.moveTo(155,255)
+    catax.lineTo(205,250) // left connector
+
+    catax.moveTo(305,250)
+    catax.arc(255,250,50,0,Math.PI); // outer-top circle
+
+    catax.moveTo(305,250);
+    catax.arc(255,250,55,0,Math.PI); // inner-top circle
+
+    catax.moveTo(305,250) // right connector
+    catax.lineTo(355,255)
+
+    catax.stroke();
+    // finish smile. why did I do so much.
+
+    catax.beginPath(); // left eye
+    catax.arc(200,175,25,0,2*Math.PI);
+    catax.fillStyle = "red";
+    catax.fill();
+
+    catax.beginPath(); // left eye wink
+    catax.arc(200,165,25,0,2*Math.PI);
+    catax.fillStyle = "#ADD8E6";
+    catax.fill();
+
+    catax.beginPath(); // right eye
+    catax.arc(300,175,25,0,2*Math.PI);
+    catax.fillStyle = "red";
+    catax.fill();
+
+    </script>
+  </body>
+</html>
